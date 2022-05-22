@@ -12,7 +12,6 @@ const Counter = () => {
   };
   const colorSwitcher = () => {
     let el = document.getElementById('p');
-    if (!el?.style.color) el?.setAttribute('style', 'color: white');
     el?.style.color === 'white'
       ? el?.setAttribute('style', 'color: orange')
       : el?.setAttribute('style', 'color: white');
@@ -27,7 +26,9 @@ const Counter = () => {
     <div className="counter">
       <Button onClick={increment} children="Increment" />
       <Button onClick={decrement} children="Decrement" />
-      <p id="p">{count}</p>
+      <p id="p" style={{ color: 'white' }}>
+        {count}
+      </p>
     </div>
   );
 };
